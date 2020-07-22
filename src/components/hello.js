@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const hello = ({ val, name, sayHello }) => {
-  const sayMyHello = () => {
-    // alert("my hello");
-    sayHello && sayHello();
-  };
+const Hello = ({ val1 }) => {
+  const [value, setValue] = useState(val1);
+  useEffect(() => {
+    setValue(val1);
+  }, [val1]);
+
   return (
     <div>
-      {!!val && (<h1>hello, {name}</h1>)}<br/>
-      {!val && (<h1>hello, {name}</h1>)}
-      <button onClick={sayMyHello}>say hello</button>
+      {value}
     </div>
   );
 };
 
-export default hello;
+export default Hello;
