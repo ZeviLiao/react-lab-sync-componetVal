@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+// import logo from './logo.svg';
+import "./App.css";
+import Hello from "./components/hello";
 
 function App() {
+  const [val, setVal] = useState(0);
+  const [name, setName] = useState("zevi");
+
+  const sayHello = () => {
+    setVal(!val);
+    setName("ZZ");
+  };
+
+  let myProps = {
+    val,
+    name,
+    sayHello,
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Hello {...myProps}></Hello>
     </div>
   );
 }
