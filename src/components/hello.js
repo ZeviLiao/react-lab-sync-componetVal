@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-const Hello = ({ val1 }) => {
-  const [value, setValue] = useState(val1);
-  useEffect(() => {
-    setValue(val1);
-  }, [val1]);
+const Hello = ({ children, onClearVal, val2 }) => {
+  const onClear = () => {
+    onClearVal && onClearVal();
+  };
 
   return (
     <div>
-      {value}
+      <button onClick={onClear}>clear value</button>
+      {children}
+      <h3>value2:{val2}</h3>
     </div>
   );
 };
