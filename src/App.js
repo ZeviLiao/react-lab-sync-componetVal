@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
-import ButtonTest from "./components/ButtonTest";
+// import ButtonTest from "./components/ButtonTest";
+import PropsTest from './components/PropsTest';
 
 function App() {
   return (
-    <ButtonTest></ButtonTest>
+    <PropsTest></PropsTest>
   );
 }
 
